@@ -1,16 +1,20 @@
-dev:
-	yarn run start
+bundelPacking:
+	yarn webpack --config webpack.config.js
+
+autocompile: 
+	yarn webpack --watch --config webpack.config.js
+
+serve: 
+	yarn webpack-dev-server --config  webpack.config.js --open
+
+dev: 
+	$(MAKE) bundelPacking && $(MAKE) serve && $(MAKE) autocompile
+
+book: 
+	yarn run storybook
 
 publish:
 	npm run publish
 
-book:
-	npm run storybook
-
-prod:
-	yarn publish
-
-dual:
-	$(MAKE) jarvis && $(MAKE) book
-
-#Updaling Build  need to publish as well
+jarvis-prod:
+	yarn run publish

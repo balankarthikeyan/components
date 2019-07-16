@@ -1,10 +1,14 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import styled from 'styled-components'
 
+const Heading = styled.h1`
+  color: blue;
+`
 const App = () => {
   return(
     <React.Fragment>
-      <h1> {'Hello'} </h1>
+      <Heading> {'Hello--'} </Heading>
     </React.Fragment>
   )
 }
